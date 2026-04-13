@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Upload - Calmionix</title>
+  <meta name="description" content="Jadwal upload konten endorse server Minecraft. Pilih slot yang tersedia dan amankan jadwal Anda.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  
+  <style>
+    .schedule-legend {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-xl);
+      margin-bottom: var(--space-xl);
+      flex-wrap: wrap;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+    }
+    
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: var(--radius-full);
+    }
+    
+    .legend-dot.available {
+      background: var(--success);
+    }
+    
+    .legend-dot.booked {
+      background: var(--danger);
+    }
+    
+    .legend-dot.today {
+      background: var(--accent-primary);
+    }
+    
+    .schedule-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+    
+    .schedule-header h2 {
+      margin-bottom: var(--space-sm);
+    }
+    
+    .schedule-header p {
+      color: var(--text-muted);
+    }
+    
+    .schedule-note {
+      background: var(--bg-tertiary);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      margin-top: var(--space-xl);
+      text-align: center;
+    }
+    
+    .schedule-note i {
+      color: var(--accent-primary);
+      margin-right: var(--space-sm);
+    }
+    
+    .schedule-note p {
+      margin: 0;
+      font-size: var(--text-sm);
+    }
+    
+    .schedule-item .server-name {
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      color: var(--text-primary);
+      margin-top: var(--space-xs);
+      text-align: center;
+      word-break: break-word;
+    }
+    
+    .schedule-item .platform-name {
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    
+    .schedule-item.booked .server-name {
+      color: var(--danger);
+    }
+    
+    .schedule-item.available .server-name {
+      color: var(--success);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img src="assets/images/logo.png" alt="Calmionix Logo">
+        <span>Calmionix</span>
+      </a>
+      
+      <ul class="navbar-nav">
+        <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="price.html" class="nav-link"><i class="fas fa-tag"></i> Price List</a></li>
+        <li><a href="schedule.html" class="nav-link active"><i class="fas fa-calendar-alt"></i> Jadwal</a></li>
+        <li><a href="cara-endorse.html" class="nav-link"><i class="fas fa-book"></i> Cara Endorse</a></li>
+        <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> FAQ</a></li>
+        <li><a href="social.html" class="nav-link"><i class="fas fa-share-alt"></i> Social</a></li>
+        <li><a href="https://discord.gg/qfdBAW29sT" class="nav-link" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+      </ul>
+      
+      <div class="navbar-actions">
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-sun sun-icon"></i>
+          <i class="fas fa-moon moon-icon"></i>
+        </button>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Schedule Section -->
+  <section class="section" style="padding-top: calc(var(--navbar-height) + var(--space-3xl));">
+    <div class="container">
+      <div class="schedule-header reveal">
+        <h2>Jadwal Upload</h2>
+        <p>Pilih tanggal yang tersedia untuk mengamankan slot upload Anda</p>
+      </div>
+      
+      <!-- Legend -->
+      <div class="schedule-legend reveal">
+        <div class="legend-item">
+          <div class="legend-dot available"></div>
+          <span>Tersedia</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot booked"></div>
+          <span>Booked</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot today"></div>
+          <span>Hari Ini</span>
+        </div>
+      </div>
+      
+      <!-- Schedule Grid -->
+      <div class="schedule-grid" id="scheduleGrid">
+        <!-- Schedule items will be loaded by JavaScript -->
+      </div>
+      
+      <!-- Note -->
+      <div class="schedule-note reveal">
+        <i class="fas fa-info-circle"></i>
+        <p>Jam upload bervariasi sesuai jadwal. Hubungi kami jika membutuhkan jam upload yang berbeda.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gradient">
+    <div class="container">
+      <div class="text-center reveal">
+        <h2 style="font-size: var(--text-3xl); margin-bottom: var(--space-lg);">
+          Butuh Bantuan?
+        </h2>
+        <p style="font-size: var(--text-lg); max-width: 500px; margin: 0 auto var(--space-2xl);">
+          Jika Anda memiliki pertanyaan tentang jadwal atau ingin request slot khusus, 
+          silakan hubungi kami melalui WhatsApp.
+        </p>
+        <a href="https://wa.me/6282130570915" class="btn btn-primary btn-lg" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+          Hubungi Kami
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="index.html" class="footer-brand">
+          <img src="assets/images/logo.png" alt="Calmionix Logo" style="width: 32px; height: 32px;">
+          <span>Calmionix</span>
+        </a>
+        
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="price.html">Price List</a></li>
+          <li><a href="schedule.html">Jadwal</a></li>
+          <li><a href="cara-endorse.html">Cara Endorse</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="social.html">Social</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Calmionix. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      loadSchedule();
+    });
+    
+    async function loadSchedule() {
+      const scheduleContainer = document.getElementById('scheduleGrid');
+      
+      try {
+        const response = await fetch('data/schedule.json');
+        const scheduleData = await response.json();
+        
+        // Create a map of booked dates with details
+        const bookedMap = {};
+        scheduleData.forEach(item => {
+          if (!bookedMap[item.date]) {
+            bookedMap[item.date] = [];
+          }
+          bookedMap[item.date].push(item);
+        });
+        
+        // Generate 20 days starting from today
+        const days = [];
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        
+        for (let i = 0; i < 20; i++) {
+          const date = new Date(today);
+          date.setDate(today.getDate() + i);
+          days.push(date);
+        }
+        
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+        const dayNames = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
+        
+        let html = '';
+        
+        days.forEach((date, index) => {
+          const dateStr = date.toISOString().split('T')[0];
+          const bookedSlots = bookedMap[dateStr] || [];
+          const isBooked = bookedSlots.length > 0;
+          const isToday = index === 0;
+          
+          let statusClass = 'available';
+          let statusText = 'Available';
+          let timeText = '15:00 WIB';
+          
+          if (isToday) {
+            statusClass = 'today';
+            statusText = 'Hari Ini';
+          } else if (isBooked) {
+            statusClass = 'booked';
+            statusText = 'Booked';
+            timeText = bookedSlots[0].time + ' WIB';
+          }
+          
+          const staggerClass = index < 6 ? `stagger-${(index % 6) + 1}` : '';
+          
+          // Build booked content
+          let bookedContent = '';
+          if (isBooked) {
+            bookedSlots.forEach(slot => {
+              bookedContent += `
+                <div class="server-name">${slot.server}</div>
+                <div class="platform-name">${slot.platform} | ${slot.time}</div>
+              `;
+            });
+          }
+          
+          html += `
+            <div class="schedule-item ${statusClass} reveal ${staggerClass}">
+              <div class="date">${dayNames[date.getDay()]}</div>
+              <div class="day">${date.getDate()}</div>
+              <div class="month">${monthNames[date.getMonth()]} ${date.getFullYear()}</div>
+              ${!isBooked ? `<div class="time">${timeText}</div>` : ''}
+              ${isBooked ? bookedContent : `<div class="status">${statusText}</div>`}
+              ${!isBooked ? `
+                <a href="${Calmionix.generateWhatsAppLink(date, '15:00')}" class="btn btn-primary btn-sm" target="_blank">
+                  Ambil Slot
+                </a>
+              ` : ''}
+            </div>
+          `;
+        });
+        
+        scheduleContainer.innerHTML = html;
+        
+        // Re-initialize scroll reveal for new elements
+        initScrollReveal();
+        
+      } catch (error) {
+        console.error('Error loading schedule:', error);
+        scheduleContainer.innerHTML = `
+          <div class="text-center" style="grid-column: 1 / -1; padding: var(--space-2xl);">
+            <i class="fas fa-exclamation-circle" style="font-size: var(--text-4xl); color: var(--danger); margin-bottom: var(--space-md);"></i>
+            <h3>Gagal Memuat Jadwal</h3>
+            <p>Silakan refresh halaman atau hubungi kami jika masalah berlanjut.</p>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
