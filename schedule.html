@@ -235,7 +235,7 @@
       const scheduleContainer = document.getElementById('scheduleGrid');
       
       try {
-        const response = await fetch('data/schedule.json');
+        const response = await fetch('data/schedule.json?v=' + Date.now());
         const scheduleData = await response.json();
         
         // Create a map of booked dates with details
