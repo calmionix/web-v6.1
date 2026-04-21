@@ -100,7 +100,14 @@
   {
     "date": "2026-04-27",
     "day": "Senin",
-    "server": "Calmionix",
+    "server": "Calmionix SMP",
+    "platform": "TikTok",
+    "time": "15:00"
+  },
+  {
+    "date": "2026-04-28",
+    "day": "Selasa",
+    "server": "Heaven RPG",
     "platform": "TikTok",
     "time": "15:00"
   }
