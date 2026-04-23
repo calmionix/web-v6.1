@@ -1,75 +1,5 @@
 [
   {
-    "date": "2026-04-13",
-    "day": "Senin",
-    "server": "MAFR SMP",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
-    "date": "2026-04-14",
-    "day": "Selasa",
-    "server": "Arcane Network",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
-    "date": "2026-04-15",
-    "day": "Rabu",
-    "server": "Vanasaga ID",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-   {
-    "date": "2026-04-16",
-    "day": "Kamis",
-    "server": "Calmionix SMP",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
-    "date": "2026-04-17",
-    "day": "Jumat",
-    "server": "Dexa SMP",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
-    "date": "2026-04-18",
-    "day": "Sabtu",
-    "server": "Empirewars",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
-    "date": "2026-04-19",
-    "day": "Minggu",
-    "server": "Zen SMP",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
-    "date": "2026-04-20",
-    "day": "Senin",
-    "server": "Vortex SMP",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
-    "date": "2026-04-21",
-    "day": "Selasa",
-    "server": "Evo Pixel",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
-    "date": "2026-04-22",
-    "day": "Rabu",
-    "server": "MT2PW",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
     "date": "2026-04-23",
     "day": "Kamis",
     "server": "Garadez",
@@ -79,7 +9,7 @@
   {
     "date": "2026-04-24",
     "day": "Jumat",
-    "server": "shadowyn",
+    "server": "Garadez MSC",
     "platform": "TikTok",
     "time": "15:00"
   },
@@ -115,6 +45,13 @@
     "date": "2026-04-29",
     "day": "Rabu",
     "server": "Netherking",
+    "platform": "TikTok",
+    "time": "15:00"
+  },
+  {
+    "date": "2026-04-30",
+    "day": "Kamis",
+    "server": "Shadowyn",
     "platform": "TikTok",
     "time": "15:00"
   }
