@@ -1,40 +1,5 @@
 [
   {
-    "date": "2026-04-23",
-    "day": "Kamis",
-    "server": "Garadez",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
-    "date": "2026-04-24",
-    "day": "Jumat",
-    "server": "Garadez MSC",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
-    "date": "2026-04-25",
-    "day": "Sabtu",
-    "server": "Potato SMP",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
-    "date": "2026-04-26",
-    "day": "Minggu",
-    "server": "Voyality SMP",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
-    "date": "2026-04-27",
-    "day": "Senin",
-    "server": "Calmionix SMP",
-    "platform": "TikTok",
-    "time": "15:00"
-  },
-  {
     "date": "2026-04-28",
     "day": "Selasa",
     "server": "Heaven RPG",
@@ -59,6 +24,13 @@
     "date": "2026-05-01",
     "day": "Jumat",
     "server": "Potato SMP",
+    "platform": "TikTok",
+    "time": "15:00"
+  },
+  {
+    "date": "2026-05-02",
+    "day": "Sabtu",
+    "server": "Calmionix SMP",
     "platform": "TikTok",
     "time": "15:00"
   }
