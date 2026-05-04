@@ -71,8 +71,15 @@
   },
   {
     "date": "2026-05-08",
-    "day": "Kamis",
+    "day": "Jumat",
     "server": "Terangin SMP",
+    "platform": "TikTok",
+    "time": "15:00"
+  },
+  {
+    "date": "2026-05-09",
+    "day": "Sabtu",
+    "server": "PVP Legend",
     "platform": "TikTok",
     "time": "15:00"
   }
