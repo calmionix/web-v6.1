@@ -51,7 +51,7 @@
   {
     "date": "2026-05-05",
     "day": "Selasa",
-    "server": "Terangin SMP",
+    "server": "Kingkodm SMP",
     "platform": "TikTok",
     "time": "15:00"
   },
@@ -66,6 +66,13 @@
     "date": "2026-05-07",
     "day": "Kamis",
     "server": "Potato SMP",
+    "platform": "TikTok",
+    "time": "15:00"
+  },
+  {
+    "date": "2026-05-08",
+    "day": "Kamis",
+    "server": "Terangin SMP",
     "platform": "TikTok",
     "time": "15:00"
   }
